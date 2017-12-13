@@ -8,19 +8,14 @@ celle de son carré .
 
 int main()
 {
-    int diana = 1;
-    int souley = 0;
-    int raffou = 0;
+    int nb = 0;
+    int carre = 0;
 
-    diana = souley + diana * 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    printf("Veuillez introduire un numero entier : ");
+    scanf("%d", &nb);
 
-    if (diana > raffou)
-    {
-        printf("Diana est vraiment la plus forte !");
-    }
-    else if (raffou > diana)
-    {
-        printf("Raffou est vraiment le plus fort !");
-    }
+    carre = nb * nb;
+    printf("Le carre de %d est %d", nb, carre);
+
     return 0;
 }

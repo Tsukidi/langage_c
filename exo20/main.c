@@ -14,21 +14,26 @@ int main()
 {
     //Declaration et initialisation
     int nbLu;
+
     //Entree des donnees
     printf("Entrez un entier : \n");
     scanf("%d", &nbLu);
+
     //Traitement des donnees
     if(nbLu > 0)
     {
         printf("Ce nombre est positif \n\n");
 
     }
-    else{
-    if (nbLu < 0)
+
+    else
+    {
+        if (nbLu < 0)
         {
         printf("Ce nombre est negatif \n\n");
         }
-    if (nbLu =0)
+
+        if (nbLu = 0)
         {
         printf("Ce nombre est nulle\n\n");
         }

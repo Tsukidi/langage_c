@@ -10,11 +10,14 @@ int main()
 {
     //Declaration, initialisation
     double rayon, perimetre;
+
     //Entree des donnees
     printf("Entree le rayon : \n");
-    scanf("%", &rayon);
+    scanf("%f", &rayon);
+
     //Calcul du perimetre
     perimetre = 2 * PI * rayon;
+
     //Edition des resultats
     printf("\n\n Le perimetre d'un cercle de rayon %f est : %f", rayon, perimetre);
 

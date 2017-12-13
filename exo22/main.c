@@ -10,10 +10,12 @@ int main()
 {
     //Declaration et initialization
     int A, B;
+
     //Entree des donnees
     printf("Entrez deux entiers separes par un espace :\n");
     scanf("d%d", &A, &B);
     printf("\n\n A = %d, B= %d", A,B);
+
     //Traiter les donnees
     if (A>B)
     {
@@ -23,6 +25,7 @@ int main()
     {
         //Rien a faire A et B sont dans le bon ordre
     }
+
     printf("\n\n A present : A=%d, B=%d", A,B);
 
     return 0;
