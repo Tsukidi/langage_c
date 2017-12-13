@@ -18,7 +18,7 @@ int main()
 
     printf("Veuillez introduire un entier de 1 a 20 : ");
     scanf("%d", &N);
-    valeur = N *N;
+    valeur = N * N;
 
     while (valeur <= 400 || N <= 20)
     {

@@ -8,23 +8,26 @@ la moyenne des valeurs positives saisies. Exemple : 5, 3, 4, -1 affiche la moyen
 
 int main()
 {
-    float n1, n2, n3;
-    float moyenne;
+    int N = 1;
+    int moyenne = 0;
+    int count = 0;
 
-    printf("Veuillez introduire 3 valeurs :");
-    scanf("%f%f%f", &n1, &n2, &n3);
-
-    while ( n1 > 0 && n2 > 0 && n3 > 0)
+    while (N > 0)
     {
-        printf("%f%f%f\n", n1, n2, n3);
+    printf("Veuillez introduire 3 valeurs :");
+    scanf("%d", &N);
 
-        if ( n1 < 0 || n2 < 0 || n3 < 0)
-        break;
+        if ( N > 0)
+        {
+            moyenne = moyenne + N;
+            count++;
+        }
+        else
+            N = -1;
     }
 
-    moyenne = n1 + n2 + n3 / 3;
-    printf("La moyenne est :", moyenne);
-    scanf("%f", &moyenne);
+    moyenne = moyenne / count;
+    printf("La moyenne est : %d", moyenne);
 
     return 0;
 }

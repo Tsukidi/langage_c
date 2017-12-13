@@ -19,14 +19,13 @@ int main()
     printf("Entrez deux nombres entiers (un plus petit que l'autre) : \n");
     scanf("%d" "%d", &N1, &N2);
 
-    int nombre;
-    nombre = N1++ && N2--;
-
-    while ( N1 < nombre < N2 )
+    if (N1>N2)
     {
-        printf("%d\n", nombre);
-        scanf("%d", &nombre);
+        while ( N1 != N2 + 1 )
+    {
+        printf("%d\n", N1);
+        N2++;
     }
-
+    }
     return 0;
 }
