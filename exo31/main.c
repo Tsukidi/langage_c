@@ -28,12 +28,12 @@ int main()
         printf("Le diametre du cercle est : %f", rayon);
         break;
 
-    case 2:
+        case 2:
         rayon = 2 * PI * rayon;
         printf("Le perimetre du cercle est : %f", rayon);
         break;
 
-    case 3:
+        case 3:
         rayon = PI * rayon * rayon;
         printf("L'aire du cercle est : %f", rayon);
         break;

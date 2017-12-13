@@ -28,10 +28,8 @@ int main()
     printf("Pressez RETURN pour demarrer le chronometre\n");
     getchar();
 
-    if (getchar())
-    {
-        printf("Pressez RETURN pour arreter le chronometre\n");
-    }
+    printf("Pressez RETURN pour arreter le chronometre\n");
+    getchar();
 
     fin = time(NULL);
     difference = difftime(fin, debut);

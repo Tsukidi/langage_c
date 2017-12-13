@@ -34,5 +34,10 @@ int main()
         printf("Cadet");
     }
 
+        else if (N < 6)
+        {
+            printf("Erreur");
+        }
+
     return 0;
 }
