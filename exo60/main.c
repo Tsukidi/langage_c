@@ -9,23 +9,17 @@ si l'utilisateur entre le nombre 17, le programme affichera les nombres de 18 à 
 int main()
 {
     int N = 0;
-    int mem;
+    int i;
+    int number;
 
     printf("Veuillez introduire un numero entier :\n");
     scanf ("%d", &N);
-    mem = N;
-    N = N++;
 
-    if (mem != N++)
+    for (i=0; i<=10; i++)
     {
-        printf("%d %d %d %d %d %d %d %d %d %d", N);
-        mem++;
-        if (mem > 0)
-        {
-            printf("\n");
-            mem++;
-        }
+        number= N + i;
+        printf("%d\n", number);
+
     }
-    printf("\n");
     return 0;
 }
