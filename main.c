@@ -1,39 +1,48 @@
-/*****************************
-Exercice 89 : test clavier
-La fonction kbhit teste si un caractère a été frappé au clavier. Tant que ce n'est pas vrai kbhit renvoie 0 (ceci signifie que la valeur
-retournée par la fonction kbhit est 0).
-while(!kbhit()) // tant que kbhit est faux, exécuter la boucle
-Ecrire un programme qui affiche le carré des entiers 1, 2, 3 ...... tant qu'aucun caractère
-n'a été frappé au clavier. Vous utiliserez une fonction de temporisation afin que
-l’affichage ne soit pas trop
-*******************************/
+/****************************
+Exercice 92 : Nous utiliserons une constante globale pour définir la taille des tableaux utilisés par le programme suivant:
+const int NB = 10;
+1) Écrivez une fonction qui prend un tableau de taille NB en paramètre, et initialise chacun de ses éléments à une valeur aléatoire.
+2) Écrivez une fonction qui affiche un tableau de taille NB passé en paramètre.
+3) Écrivez une fonction qui prend un tableau de taille NB en paramètre et un paramètre noté n. La fonction devra retourner le
+nombre d'éléments du tableau divisibles par n.
+*****************************/
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <time.h>
+///Constantes et variables globables
+const int NB = 10;
 
+///Declarations de fonctions
+void initialisation (int[]);
+void affiche (int []);
+int divisiblePar (int [], int);
 int main()
 {
-    int i = 0;
-    int multiplication;
-
-    printf("Pour sortir de ce programme frapper une touche: ");
-
-    while (!kbhit())
-    {
-        for (i = 0; i <= multiplication; i++)
-        {
-            srand(time(NULL));
-            i = multiplication;
-            multiplication = i * i;
-            printf ("i = %d et i*i = %d \n", i, multiplication);
-            i++;
-        }
-
-    while (1);
-    }
-    kbhit();
-
+    srand(time(0));
+    ///Declaration
+    int tab[NB];
+    ///Initialiser le tableau
+    initialisation(tab);
+    affiche (tab);
+    int n = 2;
+    printf("Nombre d'elements pairs : %d" , divisiblePar (tab, n));
     return 0;
+}
+///Definition des fonctions
+void initialisation (int tab [])
+{
+    ///Affiche le tableau tab
+    int i;
+    int nbMultiple_n = 0;
+    printf("\nInitialisation du tableau");
+    for (i=0; i < NB; i++)
+    {
+        if(tab[i]%n == 0)
+        {
+            nbMultiple_n++;
+        }
+       printf("%d", tab[i]);
+    }
+    return nbMultiple_n;
 }
