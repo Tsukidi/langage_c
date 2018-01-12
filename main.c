@@ -1,58 +1,39 @@
-/********************
-Exercice 87-2 : Modifier l'exercice précédent de façon à jouer autant de fois que l'on veut,
-en arrêtant par la touche 'q'. Vous éditerez la statistique du pourcentage de coups gangnants.
-**********************/
+/*****************************
+Exercice 89 : test clavier
+La fonction kbhit teste si un caractère a été frappé au clavier. Tant que ce n'est pas vrai kbhit renvoie 0 (ceci signifie que la valeur
+retournée par la fonction kbhit est 0).
+while(!kbhit()) // tant que kbhit est faux, exécuter la boucle
+Ecrire un programme qui affiche le carré des entiers 1, 2, 3 ...... tant qu'aucun caractère
+n'a été frappé au clavier. Vous utiliserez une fonction de temporisation afin que
+l’affichage ne soit pas trop
+*******************************/
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <time.h>
-///Variables globales
 
-///Declaration des variables
-int lancerDeDe ();
-
-///Fonction principale
 int main()
 {
-    int d1, d2, d3; ///int d[3] nous pouvons aussi dire qu'il existe un tableau de 3 valeurs
-    int nbEssai = 0;
-    int gagne = 0;
-    float pourcentage;
-    ///Initialiser le generateur aleatoire
-    srand(time(0));
+    int i = 0;
+    int multiplication;
 
-    do
+    printf("Pour sortir de ce programme frapper une touche: ");
+
+    while (!kbhit())
     {
-        nbEssai++;
-        printf("\nJouez le coup suivant  en appuyant sur une touche ( 'q' pour arreter ) : ");
-        char c = getch();
-        ///si c == q on sort sinon on joue
-        d1 = lancerDeDe ();
-        d2 = lancerDeDe ();
-        d3 = lancerDeDe ();
-        if (c=='q')
+        for (i = 0; i <= multiplication; i++)
         {
-            break;
+            srand(time(NULL));
+            i = multiplication;
+            multiplication = i * i;
+            printf ("i = %d et i*i = %d \n", i, multiplication);
+            i++;
         }
-        printf("\n\nVous avez lance : [%d] [%d] [%d]", d1, d2, d3);
 
-        if ((d1+d2+d3 == 7) && (d1==4) || (d2==4) || (d3==4) )
-        {
-            printf("\nVous avez gagne!");
-            gagne++;
-        }
-        else
-            printf("\nVous avez perdu pour ce coup");
-
+    while (1);
     }
-        while (1); ///on ne s'arrete jamais de jouer
-        ///on sort de la boucle de jeu par le break
+    kbhit();
 
-        pourcentage = gagne / nbEssai;
-        printf("Pourcentage: %f\n\n :", pourcentage);
-
-        printf("\n");
-        ///Definition des foctions
-        int lancerDeDe ();{
-        return 1 + rand()%6;
-        }
+    return 0;
+}
